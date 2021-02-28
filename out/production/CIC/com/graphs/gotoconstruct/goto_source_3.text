@@ -1,0 +1,16 @@
+st_1
+st_2
+
+goto L2
+st_3
+st_4
+
+.label L1:
+  st_5
+  st_6
+  goto L2
+
+.label L2:
+
+st_7
+st_8

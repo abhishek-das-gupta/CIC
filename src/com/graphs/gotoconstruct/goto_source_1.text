@@ -1,0 +1,21 @@
+st_1
+st_2
+
+if(ac = 0) then goto L3
+st_3
+st_4
+
+.label L1:
+   st_11
+
+   st_14
+.label L2:
+st_15
+   st_12
+
+.label L3:
+   st_13
+
+st_5
+st_6
+st_7

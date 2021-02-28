@@ -1,0 +1,26 @@
+st_1
+st_2 (select * from emp)
+
+if(ac1 = 0) then goto L3
+st_3
+st_4
+st_5
+
+.label L1:
+  st_14
+  if(ac2 <> 0) then goto L2
+  st_6
+  st_7
+  goto L3
+
+.label L2:
+  st_8
+  st_9
+  if(eC <> 0) then goto L4
+  st_10
+
+.label L3:
+  st_11
+.label L4:
+st_12
+st_13
