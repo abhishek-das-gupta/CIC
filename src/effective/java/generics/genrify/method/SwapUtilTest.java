@@ -1,10 +1,9 @@
 package effective.java.generics.genrify.method;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 public class SwapUtilTest {
 
-    @Test
     public void testGenerify() {
         Integer[] given = {new Integer(1), new Integer(2), new Integer(3), new Integer(4)};
         Integer[] expected = {new Integer(3), new Integer(2), new Integer(1), new Integer(4)};
