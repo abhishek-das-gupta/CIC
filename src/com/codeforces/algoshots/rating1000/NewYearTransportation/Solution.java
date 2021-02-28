@@ -1,4 +1,4 @@
-package com.codeforces.algoshots.rating1000.BoardMoves;
+package com.codeforces.algoshots.rating1000.NewYearTransportation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,15 +8,13 @@ import java.util.StringTokenizer;
 public class Solution {
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
-        int t = fs.nextInt();
-        while (t-- > 0) {
-            int n = fs.nextInt();
-            long res = 0;
-            for (int i = 1; i<= n/2; ++i){
-                res += (long) i * i;
-            }
-            System.out.println(res * 8);
-         }
+        int n = fs.nextInt(), targetHouse = fs.nextInt();
+        int[] a = fs.readArray(n - 1);
+        int curHouse = 1;
+        while (curHouse < targetHouse) {
+            curHouse = curHouse + a[curHouse - 1];
+        }
+        System.out.println(curHouse == targetHouse ? "YES" : "NO");
     }
 
     static class FastScanner {

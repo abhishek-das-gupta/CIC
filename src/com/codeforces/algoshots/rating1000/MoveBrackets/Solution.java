@@ -1,8 +1,9 @@
-package com.codeforces.algoshots.rating1000.BoardMoves;
+package com.codeforces.algoshots.rating1000.MoveBrackets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Solution {
@@ -11,12 +12,30 @@ public class Solution {
         int t = fs.nextInt();
         while (t-- > 0) {
             int n = fs.nextInt();
-            long res = 0;
-            for (int i = 1; i<= n/2; ++i){
-                res += (long) i * i;
+            StringBuilder sb = new StringBuilder(fs.next());
+            Stack<Integer> stack = new Stack<>();
+            for (int i = 0; i < n; ++i) {
+                char c = sb.charAt(i);
+                if (c == '(') {
+                    stack.push(i);
+                } else {
+                    if (stack.isEmpty()) {
+                        sb.setCharAt(i, '#');
+                    } else {
+                        stack.pop();
+                    }
+                }
             }
-            System.out.println(res * 8);
-         }
+            while (!stack.isEmpty()) {
+                sb.setCharAt(stack.pop(), '#');
+            }
+            int misplacedBracketsCount = 0;
+            for (char c : sb.toString().toCharArray()) {
+                misplacedBracketsCount += c == '#' ? 1 : 0;
+            }
+            System.out.println(misplacedBracketsCount / 2);
+        }
+
     }
 
     static class FastScanner {
