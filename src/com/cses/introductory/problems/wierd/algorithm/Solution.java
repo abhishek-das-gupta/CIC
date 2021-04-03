@@ -1,18 +1,23 @@
-package com.codeforces.algoshots.rating1000.DonutShops;
+package com.cses.introductory.problems.wierd.algorithm;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 public class Solution {
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
-        // x*a < (c / b)
-        // (a + )
-
+        PrintWriter writer = new PrintWriter(System.out);
+        int n = fs.nextInt();
+        while (n != 1) {
+            writer.print(n + " ");
+            if (n % 2 == 0) n /= 2;
+            else n = n * 3 + 1;
+        }
+        writer.println(n);
     }
-
     static class FastScanner {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer("");
